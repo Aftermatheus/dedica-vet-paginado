@@ -1,0 +1,227 @@
+body {
+    background-color: #011a20;
+    color: #fff;
+    margin: 0 auto;
+    width: 100em;
+    overflow: hidden;
+    font-family: 'Open Sans';
+}
+
+.cabecalho {
+    height: 80px;
+    background-color: #000000d9;
+    display: block;
+    align-items: center;
+    border-bottom: 1px solid #282828;
+}
+
+.cabecalho .logo-do-site {
+    max-height: 100px;
+}
+
+.cabecalho .logo-escrita {
+    max-height: 100px;
+}
+
+.cabecalho .menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    height: 80px;
+    justify-content: space-around;
+}
+
+.cabecalho .menu li a {
+    padding: 25px;
+    color: #e8e8e8;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.cabecalho .menu li .botao:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.home {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.home .informacoes {
+    position: absolute;
+    z-index: 1;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px 10px 10px;
+    max-width: 780px;
+}
+
+.btn-plataforma-caes, .btn-plataforma-gatos{
+    color: #fff;
+    width: 270px;
+    cursor: pointer;
+    border-radius: 20px;
+    align-items: center;
+    text-transform: uppercase;
+    transition: all .3s ease-in;
+    border: none;
+    background-color: #00000000;
+}
+.btn-plataforma-caes, .btn-plataforma-gatos img{
+    position: inherit
+}
+
+.img-secoes {
+    width: 270px;
+}
+
+.secoes {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 50px;
+    font-weight: 700;
+    background-color: #0000006b;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.cartoes {
+    display: flex;
+    border-radius: 20px;
+    max-height: 80em;
+    gap: 50px;
+}
+
+.informacoes .cartao .img-secoes {
+    border-radius: 20px;
+    border: 5px;
+    border-style: solid;
+}
+
+.btn-plataforma-caes .plataformas-caes {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all .3s ease-in;
+    display: none;
+    opacity: 0;
+}
+
+.btn-plataforma-gatos .plataformas-gatos {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all .3s ease-in;
+    display: none;
+    opacity: 0;
+}
+
+.btn-plataforma-caes .plataformas-caes.ativo {
+    display: flex;  
+    opacity: 1;
+}
+
+.btn-plataforma-gatos .plataformas-gatos.ativo {
+    display: flex;  
+    opacity: 1;
+}
+
+.plataformas-caes, .plataformas-gatos{
+    font-weight: bolder;
+}
+
+.btn-plataforma-caes .plataformas-caes li{
+    border-radius: 20px;
+    height: 30px;
+    background-color: #09202e;
+}
+
+.btn-plataforma-caes .plataformas-caes li p{
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.btn-plataforma-gatos .plataformas-gatos li{
+    border-radius: 20px;
+    height: 30px;
+    background-color: #09202e;
+}
+
+.btn-plataforma-gatos .plataformas-gatos li p{
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.btn-plataforma-caes .plataformas-caes li:nth-child(1) {
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;
+}
+
+.btn-plataforma-caes .plataformas-caes li:nth-child(1):hover {
+    background-color: #fff;
+    color: black;
+}
+
+.btn-plataforma-caes .plataformas-caes li:nth-child(2) {
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;}
+
+.btn-plataforma-caes .plataformas-caes li:nth-child(2):hover {
+    background-color: #fff;
+    color: black;
+}
+
+.btn-plataforma-caes .plataformas-caes li:nth-child(3) {
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;}
+
+.btn-plataforma-caes .plataformas-caes li:nth-child(3):hover {
+    background-color: #fff;
+    color: black;
+}
+
+
+.btn-plataforma-gatos .plataformas-gatos li:nth-child(1) {
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;}
+
+.btn-plataforma-gatos .plataformas-gatos li:nth-child(1):hover {
+    background-color: #fff;
+    color: black;
+}
+
+.btn-plataforma-gatos .plataformas-gatos li:nth-child(2) {
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;}
+
+.btn-plataforma-gatos .plataformas-gatos li:nth-child(2):hover {
+    background-color: #fff;
+    color: black;
+}
+
+.btn-plataforma-gatos .plataformas-gatos li:nth-child(3) {
+    border-radius: 20px;
+    border: 1px;
+    border-style: solid;}
+
+.btn-plataforma-gatos .plataformas-gatos li:nth-child(3):hover {
+    background-color: #fff;
+    color: black;
+}

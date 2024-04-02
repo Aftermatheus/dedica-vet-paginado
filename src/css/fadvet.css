@@ -42,19 +42,20 @@ body {
 }
 
 main {
+    max-height: 200px;
     width: 90%;
     display: flex;
     position: relative;
     justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: blue;
+    background-color: bue;
 }
 
 main .pesquisa {
     margin-top: 5px;
     width: 50%;
-    background-color: red;
+    background-color: rd;
     justify-content: center;
     display: flex;
     position: relative;
@@ -70,7 +71,7 @@ main .texto-fad-vet {
 
 #searchbar {
     width: 98%;
-    background-color:salmon;
+    background-color:slmon;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -128,7 +129,9 @@ input {
 
 
 
-
+#selected-sinais{
+    margin-top: 5%;
+}
 
 #selected-sinais-container {
     display:block;
@@ -139,7 +142,7 @@ input {
     margin-top: 20px;
     margin-left: 0%;
     margin-right: 0%;
-    background-color: purple;
+    background-color: prple;
 }
 
 .selected-sinal-box {
@@ -149,7 +152,7 @@ input {
     margin-right: 5px;
     margin-bottom: 5px;
     border-radius: 5px;
-    margin-top: 30%;
+    margin-top: 0%;
 }
 
 .close-button {

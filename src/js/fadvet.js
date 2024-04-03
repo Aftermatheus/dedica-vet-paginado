@@ -45,9 +45,7 @@ function selectSinal(sinal) {
     let index = selectedSinais.indexOf(sinal);
     if (index === -1) {
         selectedSinais.push(sinal); // Adiciona se não estiver presente
-    } else {
-        selectedSinais.splice(index, 1); // Remove se estiver presente
-    }
+    } 
 
     document.getElementById('searchbar').value = '';
     
@@ -87,6 +85,7 @@ function displaySelectedSinais() {
         selectedSinaisContainer.appendChild(sinalBox);
     });
 }
+
 
 // Função para remover um sinal clínico selecionado
 function removeSelectedSinal(sinal) {

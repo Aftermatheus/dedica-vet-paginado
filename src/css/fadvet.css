@@ -119,6 +119,7 @@ input {
     padding-left: 30px;
     border-radius: 5px;
     display: none;
+    cursor: pointer;
 }
 
 #lista-de-resultados li:hover {

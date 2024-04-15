@@ -1,16 +1,24 @@
 "use client";
 
-import { Box, styled, Tab, tabClasses } from "@mui/material";
+import {
+  Box,
+  Container as muiContainer,
+  styled,
+  Tab,
+  tabClasses,
+} from "@mui/material";
 
-export const Container = styled(Box)`
+export const MainBox = styled(Box)`
+  z-index: ${({ theme }) => theme.zIndex.appBar};
+  border-bottom: 2px solid ${({ theme }) => theme.palette.divider};
+  background-color: ${({ theme }) => theme.palette.background.dark};
+`;
+
+export const Container = styled(muiContainer)`
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  border: 2px solid ${({ theme }) => theme.palette.divider};
-  padding-inline: 5rem;
-  background-color: ${({ theme }) => theme.palette.background.dark};
 `;
 
 export const TabItem = styled(Tab)<{ href: string }>`

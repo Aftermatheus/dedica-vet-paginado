@@ -8,6 +8,23 @@ import { createTheme } from "@mui/material";
  * - https://zenoo.github.io/mui-theme-creator/
  */
 export const theme = createTheme({
+  zIndex: { default: 0, background: -1000 },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        sizeLarge: {
+          padding: "1rem 3rem",
+          fontSize: "1.2rem",
+        },
+        sizeMedium: {
+          padding: "1rem 2rem",
+        },
+        sizeSmall: {
+          padding: "0.5rem 1rem",
+        },
+      },
+    },
+  },
   palette: {
     mode: "dark",
     background: {

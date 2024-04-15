@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 
 import "@fontsource/roboto/300.css";
@@ -24,7 +24,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
   <html lang="pt-BR">
     <body>
       <AppRouterCacheProvider>
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {children}
+        </ThemeProvider>
       </AppRouterCacheProvider>
     </body>
   </html>

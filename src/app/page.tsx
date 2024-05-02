@@ -1,18 +1,24 @@
+import Image from "next/image";
+
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+
 import { Page } from "src/components/core/Page";
 import { Header } from "src/components/core/Header";
 import { HomeCover } from "src/components/Home/HomeCover";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { PageContent } from "src/components/core/PageContent";
 
 import * as S from "./page.styles";
-import Image from "next/image";
 
-export const HomePage: React.FC = () => (
+const HomePage: React.FC = () => (
   <Page>
     <Header />
 
-    <S.Content>
+    <PageContent>
       <HomeCover />
-      <S.Container maxWidth="xl">
+
+      <S.Container>
         <Box>
           <Image
             src="/images/logo.png"
@@ -56,7 +62,7 @@ export const HomePage: React.FC = () => (
           </Button>
         </Box>
       </S.Container>
-    </S.Content>
+    </PageContent>
   </Page>
 );
 

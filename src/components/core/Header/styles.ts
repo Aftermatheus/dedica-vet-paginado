@@ -1,12 +1,8 @@
 "use client";
-
-import {
-  Box,
-  Container as muiContainer,
-  styled,
-  Tab,
-  tabClasses,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import styled from "@mui/material/styles/styled";
+import MuiContainer from "@mui/material/Container";
+import Tab, { tabClasses } from "@mui/material/Tab";
 
 export const MainBox = styled(Box)`
   z-index: ${({ theme }) => theme.zIndex.appBar};
@@ -14,7 +10,7 @@ export const MainBox = styled(Box)`
   background-color: ${({ theme }) => theme.palette.background.dark};
 `;
 
-export const Container = styled(muiContainer)`
+export const Container = styled(MuiContainer)`
   height: 100px;
   display: flex;
   align-items: center;

@@ -1,13 +1,10 @@
 "use client";
-
-import { styled } from "@mui/material";
+import styled from "@mui/material/styles/styled";
 
 export const Container = styled("main")`
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  z-index: ${({ theme }) => theme.zIndex.background};
-  background-color: ${({ theme }) => theme.palette.background.default};
   min-height: 100vh;
   min-width: 100vw;
+
+  display: flex;
+  flex-direction: column;
 `;

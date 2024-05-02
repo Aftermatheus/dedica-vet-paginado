@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Box, Tabs } from "@mui/material";
+
+import Box from "@mui/material/Box";
+import Tabs from "@mui/material/Tabs";
 
 import * as S from "./styles";
 
@@ -25,7 +27,7 @@ export const Header: React.FC = () => (
         <Tabs value="home" role="navigation" sx={{ flex: 1 }}>
           <S.TabItem href="/" value="home" label="Home" />
           <S.TabItem
-            href="/animais"
+            href="/animals"
             value="animals"
             label="Animais Domésticos"
           />

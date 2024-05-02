@@ -1,11 +1,13 @@
 "use client";
-
-import { Box, styled } from "@mui/material";
+import Box from "@mui/material/Box";
+import styled from "@mui/material/styles/styled";
 
 export const Container = styled(Box)`
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: min(100vw, 2000px);
+  left: calc(((100vw - 100%) / 2) * -1);
+  transform: translateX(calc(50vw - 50%));
   z-index: ${({ theme }) => theme.zIndex.background};
 `;
 

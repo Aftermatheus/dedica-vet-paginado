@@ -1,6 +1,12 @@
 "use client";
+import { Roboto } from "next/font/google";
+import createTheme from "@mui/material/styles/createTheme";
 
-import { createTheme } from "@mui/material";
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 /*
  * Crie temas usando os utilitários:
@@ -9,6 +15,9 @@ import { createTheme } from "@mui/material";
  */
 export const theme = createTheme({
   zIndex: { default: 0, background: -1000 },
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+  },
   components: {
     MuiButton: {
       styleOverrides: {

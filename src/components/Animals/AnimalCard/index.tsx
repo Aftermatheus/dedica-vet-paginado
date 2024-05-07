@@ -15,10 +15,17 @@ import * as S from "./styles";
 import Image from "next/image";
 
 interface AnimalCardProps {
+  id: string;
+  alt: string;
+  image: string;
   isSelected: boolean;
 }
 
-export const AnimalCard: React.FC<AnimalCardProps> = ({ isSelected }) => (
+export const AnimalCard: React.FC<AnimalCardProps> = ({
+  alt,
+  image,
+  isSelected,
+}) => (
   <Card
     variant="elevation"
     elevation={5}
@@ -31,12 +38,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({ isSelected }) => (
       justifyContent={"center"}
     >
       <S.CardMedia>
-        <Image
-          src="/images/illustrations/dog.svg"
-          alt="Dog"
-          width={300}
-          height={300}
-        />
+        <Image src={image} alt={alt} width={300} height={300} />
       </S.CardMedia>
     </Box>
 

@@ -27,10 +27,24 @@ export const AnimalsSlide: React.FC = () => (
     }}
   >
     <SwiperSlide>
-      {({ isActive }) => <AnimalCard isSelected={isActive} />}
+      {({ isActive }) => (
+        <AnimalCard
+          id="dog"
+          alt="Dog"
+          image="images/illustrations/dog.svg"
+          isSelected={isActive}
+        />
+      )}
     </SwiperSlide>
     <SwiperSlide>
-      {({ isActive }) => <AnimalCard isSelected={isActive} />}
+      {({ isActive }) => (
+        <AnimalCard
+          id="cat"
+          alt="Cat"
+          image="images/illustrations/cat.svg"
+          isSelected={isActive}
+        />
+      )}
     </SwiperSlide>
   </Swiper>
 );

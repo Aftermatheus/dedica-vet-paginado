@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import Box from "@mui/material/Box";
@@ -5,6 +6,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import { Page } from "src/components/core/Page";
+import { routes } from "src/constants/routes";
 import { Header } from "src/components/core/Header";
 import { HomeCover } from "src/components/Home/HomeCover";
 import { PageContent } from "src/components/core/PageContent";
@@ -13,7 +15,7 @@ import * as S from "./page.styles";
 
 const HomePage: React.FC = () => (
   <Page>
-    <Header />
+    <Header route={routes.Home} />
 
     <PageContent>
       <HomeCover />
@@ -57,7 +59,13 @@ const HomePage: React.FC = () => (
         </Typography>
 
         <Box>
-          <Button variant="outlined" size="large" color="secondary">
+          <Button
+            size="large"
+            href={routes.Animals}
+            color="secondary"
+            variant="outlined"
+            LinkComponent={Link}
+          >
             ACESSE JÁ
           </Button>
         </Box>

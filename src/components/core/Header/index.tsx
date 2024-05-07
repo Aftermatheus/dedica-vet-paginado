@@ -1,14 +1,22 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
+
+import { routes } from "src/constants/routes";
+import { FlattenValues } from "src/types/FlattenValues";
 
 import * as S from "./styles";
+import { HeaderMenu } from "./HeaderMenu";
 
-export const Header: React.FC = () => (
+interface HeaderProps {
+  route?: FlattenValues<typeof routes>;
+}
+
+export const Header: React.FC<HeaderProps> = ({ route }) => (
   <S.MainBox role="header">
     <S.Container maxWidth="xl">
-      <div>
+      <Link href={routes.Home}>
         <Image
           src="/images/logo.png"
           width={100}
@@ -21,17 +29,10 @@ export const Header: React.FC = () => (
           height={100}
           alt="Dedica, Vet"
         />
-      </div>
+      </Link>
 
       <Box>
-        <Tabs value="home" role="navigation" sx={{ flex: 1 }}>
-          <S.TabItem href="/" value="home" label="Home" />
-          <S.TabItem
-            href="/animals"
-            value="animals"
-            label="Animais Domésticos"
-          />
-        </Tabs>
+        <HeaderMenu value={route ?? false} />
       </Box>
     </S.Container>
   </S.MainBox>

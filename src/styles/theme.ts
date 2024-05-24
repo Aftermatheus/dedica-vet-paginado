@@ -16,6 +16,7 @@ const roboto = Roboto({
 export const theme = createTheme({
   zIndex: { default: 0, background: -1000 },
   typography: {
+    fontSize: 16,
     fontFamily: roboto.style.fontFamily,
   },
   components: {

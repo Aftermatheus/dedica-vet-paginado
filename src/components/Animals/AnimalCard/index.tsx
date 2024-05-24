@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 import SickIcon from "@mui/icons-material/Sick";
 import BiotechIcon from "@mui/icons-material/Biotech";
 import CoronavirusIcon from "@mui/icons-material/Coronavirus";
@@ -11,8 +14,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 
+import { routes } from "src/constants/routes";
+
 import * as S from "./styles";
-import Image from "next/image";
 
 interface AnimalCardProps {
   id: string;
@@ -43,9 +47,9 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
     </Box>
 
     <Collapse in={isSelected} timeout={"auto"} unmountOnExit>
-      <List>
+      <List role="navigation">
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton LinkComponent={Link} role="link" href={routes.FadVet}>
             <ListItemIcon>
               <BiotechIcon />
             </ListItemIcon>

@@ -34,6 +34,13 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTablePagination: {
+      defaultProps: {
+        labelRowsPerPage: "Linhas por página:",
+        labelDisplayedRows: ({ from, to, count }) =>
+          `${from}-${to} de ${count !== -1 ? count : `mais de ${to}`}`,
+      },
+    },
   },
   palette: {
     mode: "dark",

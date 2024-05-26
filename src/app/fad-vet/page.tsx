@@ -1,12 +1,11 @@
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 import { Page } from "src/components/core/Page";
 import { Header } from "src/components/core/Header";
 import { PageContent } from "src/components/core/PageContent";
 import { DiseasesTable } from "src/components/FadVet/DiseasesTable";
-import { SymptomsSearch } from "src/components/FadVet/SymptomsSearch";
-import { Container } from "@mui/material";
 
 const FadVetPage: React.FC = () => (
   <Page>
@@ -26,7 +25,7 @@ const FadVetPage: React.FC = () => (
         </Typography>
       </Box>
 
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ marginBottom: "3rem" }}>
         <DiseasesTable />
       </Container>
     </PageContent>

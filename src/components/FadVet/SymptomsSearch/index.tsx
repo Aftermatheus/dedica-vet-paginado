@@ -2,41 +2,29 @@
 
 import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
-
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 
-const symptoms = [
-  { title: "Vômito" },
-  { title: "Diarréia" },
-  { title: "Febre" },
-  { title: "Cialorréia" },
-  { title: "Ataxia" },
-  { title: "Mioclonia" },
-  { title: "Conjuntivite" },
-  { title: "Hiperqueratose dos coxins" },
-  { title: "Hiperqueratose do focinho" },
-  { title: "Pústulas abdominais" },
-  { title: "Secreção nasal" },
-  { title: "Secreção ocular" },
-  { title: "Tosse produtiva" },
-  { title: "Tosse seca" },
-  { title: "Dispnéia" },
-  { title: "Anorexia" },
-];
+import { ClinicalSigns } from "src/types/ClinicalSigns";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-export const SymptomsSearch = () => (
+interface SymptomsSearchProps {
+  onChange: (value: ClinicalSigns[]) => void;
+}
+
+export const SymptomsSearch: React.FC<SymptomsSearchProps> = ({ onChange }) => (
   <Autocomplete
     multiple
-    options={symptoms.sort((a, b) => a.title[0].localeCompare(b.title[0]))}
-    groupBy={(option) => option.title[0].toUpperCase()}
-    getOptionLabel={(option) => option.title}
+    onChange={(_, value) => onChange(value)}
+    options={Object.values(ClinicalSigns).sort((a, b) =>
+      a[0].localeCompare(b[0])
+    )}
+    groupBy={(option) => option[0].toUpperCase()}
+    getOptionLabel={(option) => option}
     renderInput={({ inputProps, ...params }) => (
       <TextField
         variant="standard"
@@ -64,7 +52,7 @@ export const SymptomsSearch = () => (
           style={{ marginRight: 8 }}
           checked={selected}
         />
-        {option.title}
+        {option}
       </li>
     )}
   />

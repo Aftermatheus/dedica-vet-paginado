@@ -1,29 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
+import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
+import TableRow from "@mui/material/TableRow";
+import Collapse from "@mui/material/Collapse";
+import TableCell from "@mui/material/TableCell";
+import IconButton from "@mui/material/IconButton";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-import {
-  Box,
-  Chip,
-  Collapse,
-  IconButton,
-  TableCell,
-  TableRow,
-  Typography,
-} from "@mui/material";
 import { MainTableRow } from "./styles";
+import { ClinicalSigns } from "src/types/ClinicalSigns";
 
-export const DiseasesTableRow: React.FC = () => {
+interface DiseasesTableRowProps {
+  name: string;
+  match: number;
+  signsSearch: ClinicalSigns[];
+  clinical_signs: ClinicalSigns[];
+}
+
+export const DiseasesTableRow: React.FC<DiseasesTableRowProps> = ({
+  name,
+  match,
+  signsSearch,
+  clinical_signs,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const wrongSigns = useMemo(
+    () => signsSearch.filter((sign) => !clinical_signs.includes(sign)),
+    [signsSearch, clinical_signs]
+  );
 
   return (
     <>
       <MainTableRow>
-        <TableCell align="center">0</TableCell>
-        <TableCell>Covid</TableCell>
+        <TableCell align="center">{(match * 100).toFixed(2)}%</TableCell>
+        <TableCell>{name}</TableCell>
         <TableCell align="center">
           <IconButton
             size="small"
@@ -44,8 +59,16 @@ export const DiseasesTableRow: React.FC = () => {
               rowGap={2}
               columnGap={1}
             >
-              <Chip label={"Vômito"} color="primary" />
-              <Chip label={"Vômito"} />
+              {clinical_signs.map((sign) => (
+                <Chip
+                  key={sign}
+                  label={sign}
+                  color={signsSearch.includes(sign) ? "primary" : undefined}
+                />
+              ))}
+              {wrongSigns.map((sign) => (
+                <Chip key={sign} label={sign} color="warning" />
+              ))}
             </Box>
           </Collapse>
         </TableCell>

@@ -70,8 +70,6 @@ export const DiseasesTable: React.FC = () => {
     setSignsSearch(signs);
   }, []);
 
-  console.log(currentPage);
-
   return (
     <TableContainer component={Paper}>
       <Table>

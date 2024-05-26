@@ -11,8 +11,9 @@ import IconButton from "@mui/material/IconButton";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-import { MainTableRow } from "./styles";
 import { ClinicalSigns } from "src/types/ClinicalSigns";
+
+import { MainTableRow } from "./styles";
 
 interface DiseasesTableRowProps {
   name: string;

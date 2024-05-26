@@ -10,11 +10,12 @@ import TableFooter from "@mui/material/TableFooter";
 import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
 
-import { DiseasesTableRow } from "../DiseasesTableRow";
-import { TableHeaderCell } from "./styles";
-import { SymptomsSearch } from "../SymptomsSearch";
-import { ClinicalSigns } from "src/types/ClinicalSigns";
 import { Diseases } from "src/constants/diseases";
+import { ClinicalSigns } from "src/types/ClinicalSigns";
+
+import { SymptomsSearch } from "../SymptomsSearch";
+import { TableHeaderCell } from "./styles";
+import { DiseasesTableRow } from "../DiseasesTableRow";
 import { TablePaginationActions } from "./TablePaginationActions";
 
 type DiseasesMatch = Array<{

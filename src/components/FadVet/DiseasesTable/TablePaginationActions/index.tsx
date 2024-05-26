@@ -1,38 +1,38 @@
-import { TablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
+"use client";
+import { useCallback } from "react";
 
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
+import LastPageIcon from "@mui/icons-material/LastPage";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import LastPageIcon from "@mui/icons-material/LastPage";
 
-export const TablePaginationActions = (props: TablePaginationActionsProps) => {
-  const { count, page, rowsPerPage, onPageChange } = props;
+import { TablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
 
-  const handleFirstPageButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+type MouseEvent = React.MouseEvent<HTMLButtonElement>;
+
+export const TablePaginationActions: React.FC<TablePaginationActionsProps> = ({
+  count,
+  page,
+  rowsPerPage,
+  onPageChange,
+}) => {
+  const handleFirstPageButtonClick = useCallback((event: MouseEvent) => {
     onPageChange(event, 0);
-  };
+  }, []);
 
-  const handleBackButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleBackButtonClick = useCallback((event: MouseEvent) => {
     onPageChange(event, page - 1);
-  };
+  }, []);
 
-  const handleNextButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleNextButtonClick = useCallback((event: MouseEvent) => {
     onPageChange(event, page + 1);
-  };
+  }, []);
 
-  const handleLastPageButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleLastPageButtonClick = useCallback((event: MouseEvent) => {
     onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-  };
+  }, []);
 
   return (
     <Box sx={{ flexShrink: 0, ml: 2.5 }}>
